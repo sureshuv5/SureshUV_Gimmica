@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 6232260349491499927}
   - component: {fileID: -3233771940460914476}
   m_Layer: 5
-  m_Name: CoinInstantiateGrp
+  m_Name: coinInstantiateGrp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
