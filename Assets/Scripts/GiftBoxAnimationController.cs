@@ -63,7 +63,6 @@ public class GiftBoxAnimationController : MonoBehaviour
 
     void HandleButtonClick()
     {
-        Debug.Log("I am Clickable!");
         if (!isOpen)
         {
             isClosed = false;
