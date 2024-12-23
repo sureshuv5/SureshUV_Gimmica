@@ -11,9 +11,11 @@ public class GiftBoxAnimationController : MonoBehaviour
     public CanvasGroup interactionButtonCanvasGroup;
     public TextMeshProUGUI interactionButtonText;
     public float delay = 1.5f;
+    public float overlayDelay = 1.5f;
 
     private bool isOpen = false;
     private bool isClosed = false;
+    public float fadeinDuration = 1.0f;
 
     void Start()
     {
@@ -24,11 +26,6 @@ public class GiftBoxAnimationController : MonoBehaviour
         interactionButtonCanvasGroup.alpha = 0;
         interactionButtonCanvasGroup.interactable = false;
         interactionButtonCanvasGroup.blocksRaycasts = false;
-
-        if (interactionButtonText != null)
-        {
-            interactionButtonText.text = "Tap to Open";
-        }
 
         StartCoroutine(WaitForIntroAnimation());
     }
@@ -43,13 +40,17 @@ public class GiftBoxAnimationController : MonoBehaviour
 
     IEnumerator FadeInInteractionButton()
     {
-        float duration = 1.0f;
-        float elapsedTime = 0f;
+        if (interactionButtonText != null)
+        {
+            interactionButtonText.text = "Tap to Open";
+        }
 
-        while (elapsedTime < duration)
+        float elapsedTime = 0f;
+        interactionButton.gameObject.SetActive(true);
+        while (elapsedTime < fadeinDuration)
         {
             elapsedTime += Time.deltaTime;
-            interactionButtonCanvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / duration);
+            interactionButtonCanvasGroup.alpha = Mathf.Lerp(0, 1, elapsedTime / fadeinDuration);
             yield return null;
         }
 
@@ -82,8 +83,9 @@ public class GiftBoxAnimationController : MonoBehaviour
 
     IEnumerator OpenSequence()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(overlayDelay);
         uiObject.SetActive(true);
+        interactionButton.gameObject.SetActive(false);
     }
 
     IEnumerator CloseSequence()

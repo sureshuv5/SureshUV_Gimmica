@@ -296,6 +296,8 @@ MonoBehaviour:
   interactionButtonCanvasGroup: {fileID: 925675217}
   interactionButtonText: {fileID: 66370237}
   delay: 0.5
+  overlayDelay: 1.5
+  fadeinDuration: 1
 --- !u!95 &628652139 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2482826850807346175, guid: 5214b421c27271c40827c373a684a34f,
@@ -745,6 +747,14 @@ PrefabInstance:
       propertyPath: _maxRewardsCount
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1622375503, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
+      propertyPath: interactionButton
+      value: 
+      objectReference: {fileID: 925675215}
+    - target: {fileID: 1622375503, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
+      propertyPath: interactionButtonText
+      value: 
+      objectReference: {fileID: 66370237}
     - target: {fileID: 1872401381, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.79003906

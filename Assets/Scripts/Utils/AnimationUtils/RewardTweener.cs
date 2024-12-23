@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RewardTweener : MonoBehaviour
 {
+    public Button interactionButton;
+    public TextMeshProUGUI interactionButtonText;
+
     [SerializeField]
     GameObject _rewardPrefab;
 
@@ -205,6 +209,11 @@ public class RewardTweener : MonoBehaviour
                     });
             }
             yield return wait;
+        }
+        interactionButton.gameObject.SetActive(true);
+        if (interactionButtonText != null)
+        {
+            interactionButtonText.text = "Tap to Close";
         }
     }
 }
