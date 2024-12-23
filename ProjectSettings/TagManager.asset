@@ -15,7 +15,7 @@ TagManager:
   - Outline
   - WorldObjects
   - Shadow
-  - 
+  - Bg
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: Shadow
     uniqueID: 3493576291
+    locked: 0
+  - name: Bg
+    uniqueID: 819166777
     locked: 0
