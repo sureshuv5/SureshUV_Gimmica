@@ -50,7 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a75fcf98a9c5b4a912772cd4a70403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rewardPrefab: {fileID: 0}
+  _rewardPrefab: {fileID: 6011667096009999143, guid: 60712aecf750240adb3d79c3045d5bb4,
+    type: 3}
   _target: {fileID: 0}
   _rewardUIContainer: {fileID: 0}
   _maxRewardsCount: 10

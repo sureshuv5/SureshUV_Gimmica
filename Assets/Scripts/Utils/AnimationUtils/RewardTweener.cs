@@ -104,7 +104,7 @@ public class RewardTweener : MonoBehaviour
         PrepareRewards(_maxRewardsCount);
     }
 
-    private void OnEnable()
+    private void PlayAnimation()
     {
         if (_maxRewardsCount > _rewardsqueue.Count)
         {
@@ -205,7 +205,7 @@ public class RewardTweener : MonoBehaviour
                     });
             }
             yield return wait;
-            this.enabled = false;
+            //this.enabled = false;
         }
     }
 }
