@@ -124,6 +124,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &66370237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 66370237, guid: 1aabc79992b0b3942b02461afec7121e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2430782286569104571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &181644187
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,20 +293,27 @@ MonoBehaviour:
   giftBoxAnimator: {fileID: 628652139}
   uiObject: {fileID: 1622375497}
   interactionButton: {fileID: 925675215}
-  restartButton: {fileID: 490379006}
   interactionButtonCanvasGroup: {fileID: 925675217}
---- !u!114 &490379006 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 490379006, guid: 1aabc79992b0b3942b02461afec7121e,
+  interactionButtonText: {fileID: 66370237}
+  delay: 1
+--- !u!1 &490379004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 490379004, guid: 1aabc79992b0b3942b02461afec7121e,
     type: 3}
   m_PrefabInstance: {fileID: 2430782286569104571}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!225 &490379009
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490379004}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!95 &628652139 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2482826850807346175, guid: 5214b421c27271c40827c373a684a34f,

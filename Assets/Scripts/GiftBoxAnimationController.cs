@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,8 +9,9 @@ public class GiftBoxAnimationController : MonoBehaviour
     public Animator giftBoxAnimator;
     public GameObject uiObject;
     public Button interactionButton;
-    public Button restartButton;
     public CanvasGroup interactionButtonCanvasGroup;
+    public TextMeshProUGUI interactionButtonText; // Use TextMeshProUGUI instead of Text
+    public float delay = 1.5f;
 
     private bool isOpen = false;
     private bool isClosed = false;
@@ -17,14 +19,18 @@ public class GiftBoxAnimationController : MonoBehaviour
     void Start()
     {
         interactionButton.onClick.AddListener(HandleButtonClick);
-        restartButton.onClick.AddListener(RestartScene);
 
         uiObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
 
         interactionButtonCanvasGroup.alpha = 0;
         interactionButtonCanvasGroup.interactable = false;
         interactionButtonCanvasGroup.blocksRaycasts = false;
+
+        // Set the initial text of the interaction button using TextMeshPro
+        if (interactionButtonText != null)
+        {
+            interactionButtonText.text = "Tap to Open";
+        }
 
         StartCoroutine(WaitForIntroAnimation());
     }
@@ -72,17 +78,16 @@ public class GiftBoxAnimationController : MonoBehaviour
 
     IEnumerator OpenSequence()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(delay);
         uiObject.SetActive(true);
     }
 
     IEnumerator CloseSequence()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(delay);
         giftBoxAnimator.SetBool("open", false);
         giftBoxAnimator.SetBool("close", true);
-        yield return new WaitForSeconds(1.5f);
-        restartButton.gameObject.SetActive(true);
+        yield return new WaitForSeconds(delay);
         interactionButton.gameObject.SetActive(false);
     }
 

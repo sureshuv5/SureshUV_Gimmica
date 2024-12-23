@@ -205,7 +205,6 @@ public class RewardTweener : MonoBehaviour
                     });
             }
             yield return wait;
-            //this.enabled = false;
         }
     }
 }
