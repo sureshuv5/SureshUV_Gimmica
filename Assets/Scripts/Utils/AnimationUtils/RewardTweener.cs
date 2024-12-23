@@ -9,6 +9,10 @@ public class RewardTweener : MonoBehaviour
 {
     public Button interactionButton;
     public TextMeshProUGUI interactionButtonText;
+    public TextMeshProUGUI coinCountText; // Reference to the TextMeshProUGUI component that shows the coin count.
+
+    [SerializeField]
+    float _coinValueUpdateDelay = 0.4f;
 
     [SerializeField]
     GameObject _rewardPrefab;
@@ -147,6 +151,14 @@ public class RewardTweener : MonoBehaviour
 
         _rewardAudio.PlayOneShot(_rewardAudioClips[0]);
 
+        int targetCoinCount = 2000; // Final coin count.
+        float currentCoinCount = 0f; // Starting coin count.
+
+        // Coroutine to update the coin count text smoothly
+        StartCoroutine(
+            UpdateCoinCountText(currentCoinCount, targetCoinCount, _maxAnimDuration * 1.5f)
+        );
+
         for (int i = 0; i < _maxRewardsCount; i++)
         {
             if (_rewardsqueue.Count > 0)
@@ -215,5 +227,38 @@ public class RewardTweener : MonoBehaviour
         {
             interactionButtonText.text = "Tap to Close";
         }
+    }
+
+    // Coroutine to update the coin count text smoothly
+    private IEnumerator UpdateCoinCountText(float startCount, float targetCount, float duration)
+    {
+        coinCountText.text = Mathf.FloorToInt(0).ToString();
+        WaitForSeconds wait = new WaitForSeconds(_coinValueUpdateDelay);
+        yield return wait;
+
+        float increment = 100f; // Update increment value (increased by 50)
+        float currentCount = startCount;
+        float elapsedTime = 0f;
+
+        // Loop until the target count is reached or exceeded
+        while (currentCount < targetCount)
+        {
+            float targetIncrement = Mathf.Min(currentCount + increment, targetCount); // Ensure we don't exceed the target value
+            float stepDuration =
+                duration * (targetIncrement - currentCount) / (targetCount - startCount); // Adjust the step duration
+
+            // Increment the coin count
+            while (currentCount < targetIncrement)
+            {
+                currentCount = Mathf.MoveTowards(currentCount, targetIncrement, increment);
+                coinCountText.text = Mathf.FloorToInt(currentCount).ToString();
+                yield return new WaitForSeconds(stepDuration); // Delay between increments
+            }
+
+            elapsedTime += stepDuration;
+        }
+
+        // Set the final coin count to the target value
+        coinCountText.text = Mathf.FloorToInt(targetCount).ToString();
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2482826850807346174
 Transform:
   m_ObjectHideFlags: 0
@@ -9714,6 +9714,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2482826850807346174}
     m_Modifications:
+    - target: {fileID: 1831819839317343110, guid: 7761e8ad41486414baa5fb34a3c15a58,
+        type: 3}
+      propertyPath: m_Name
+      value: insideGlowPartle
+      objectReference: {fileID: 0}
     - target: {fileID: 7142361589031320035, guid: 7761e8ad41486414baa5fb34a3c15a58,
         type: 3}
       propertyPath: m_RootOrder

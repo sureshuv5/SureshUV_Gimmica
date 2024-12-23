@@ -304,66 +304,24 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 2482826851397143444}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &925675213 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 925675213, guid: 1aabc79992b0b3942b02461afec7121e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2430782286569104571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &925675215 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e,
     type: 3}
   m_PrefabInstance: {fileID: 2430782286569104571}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925675213}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!225 &925675217
+--- !u!225 &925675217 stripped
 CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 925675217, guid: 1aabc79992b0b3942b02461afec7121e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2430782286569104571}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925675213}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &925675218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925675213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.003921569}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,62 +750,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 490379004, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675213, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_Transition
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_Colors.m_NormalColor.a
-      value: 0.003921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_Colors.m_PressedColor.a
-      value: 0.003921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 0.003921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_Colors.m_SelectedColor.a
-      value: 0.003921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 925675215, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.a
-      value: 0.003921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 1622375503, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: _maxRewardsCount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1622375503, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: interactionButton
-      value: 
-      objectReference: {fileID: 925675215}
-    - target: {fileID: 1622375503, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: interactionButtonText
-      value: 
-      objectReference: {fileID: 66370237}
-    - target: {fileID: 1872401381, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.79003906
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872401381, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 100.19995
-      objectReference: {fileID: 0}
     - target: {fileID: 2430782285482817400, guid: 1aabc79992b0b3942b02461afec7121e,
         type: 3}
       propertyPath: m_Name
@@ -963,11 +865,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 961739752}
-    - target: {fileID: 2430782285482817407, guid: 1aabc79992b0b3942b02461afec7121e,
-        type: 3}
-      propertyPath: m_BlockingMask.m_Bits
-      value: 566
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
 --- !u!1001 &2482826851397143444
@@ -981,11 +878,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GiftBoxParent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2482826850807346173, guid: 5214b421c27271c40827c373a684a34f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2482826850807346174, guid: 5214b421c27271c40827c373a684a34f,
         type: 3}
@@ -1041,11 +933,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6884691928296543941, guid: 5214b421c27271c40827c373a684a34f,
-        type: 3}
-      propertyPath: m_Name
-      value: insideGlowPartle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5214b421c27271c40827c373a684a34f, type: 3}
