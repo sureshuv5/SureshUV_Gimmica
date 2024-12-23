@@ -55,10 +55,9 @@ public class GiftBoxAnimationController : MonoBehaviour
         }
 
         interactionButtonCanvasGroup.alpha = 1;
-        interactionButtonCanvasGroup.interactable = true; // Re-enable interaction
-        interactionButtonCanvasGroup.blocksRaycasts = true; // Enable raycasting
+        interactionButtonCanvasGroup.interactable = true;
+        interactionButtonCanvasGroup.blocksRaycasts = true;
 
-        // Reset the interaction button in case any other issues are causing the problem
         ResetButtonInteractionState();
     }
 
@@ -95,25 +94,21 @@ public class GiftBoxAnimationController : MonoBehaviour
         giftBoxAnimator.SetBool("open", false);
         isOpen = false;
 
-        // Immediately hide the interaction button when the close animation starts
         interactionButtonCanvasGroup.alpha = 0;
         interactionButtonCanvasGroup.interactable = false;
         interactionButtonCanvasGroup.blocksRaycasts = false;
 
         yield return new WaitForSeconds(delay);
 
-        // Wait for the loop animation to start again
         yield return new WaitUntil(
             () => giftBoxAnimator.GetCurrentAnimatorStateInfo(0).IsName("Loop")
         );
 
-        // Fade in the interaction button and make it interactable
         StartCoroutine(FadeInInteractionButton());
     }
 
     void ResetButtonInteractionState()
     {
-        // This function ensures the button state is refreshed and doesn't get stuck in a non-interactive state.
         interactionButtonCanvasGroup.interactable = true;
         interactionButtonCanvasGroup.blocksRaycasts = true;
     }

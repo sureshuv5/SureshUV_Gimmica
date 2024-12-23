@@ -296,8 +296,8 @@ MonoBehaviour:
   interactionButtonCanvasGroup: {fileID: 925675217}
   interactionButtonText: {fileID: 66370237}
   delay: 0.5
-  overlayDelay: 1.5
-  fadeinDuration: 1
+  overlayDelay: 0.9
+  fadeinDuration: 0.35
 --- !u!95 &628652139 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2482826850807346175, guid: 5214b421c27271c40827c373a684a34f,
