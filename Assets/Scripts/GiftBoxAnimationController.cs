@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GiftBoxAnimationController : MonoBehaviour
@@ -10,7 +9,7 @@ public class GiftBoxAnimationController : MonoBehaviour
     public GameObject uiObject;
     public Button interactionButton;
     public CanvasGroup interactionButtonCanvasGroup;
-    public TextMeshProUGUI interactionButtonText; // Use TextMeshProUGUI instead of Text
+    public TextMeshProUGUI interactionButtonText;
     public float delay = 1.5f;
 
     private bool isOpen = false;
@@ -26,7 +25,6 @@ public class GiftBoxAnimationController : MonoBehaviour
         interactionButtonCanvasGroup.interactable = false;
         interactionButtonCanvasGroup.blocksRaycasts = false;
 
-        // Set the initial text of the interaction button using TextMeshPro
         if (interactionButtonText != null)
         {
             interactionButtonText.text = "Tap to Open";
@@ -56,22 +54,28 @@ public class GiftBoxAnimationController : MonoBehaviour
         }
 
         interactionButtonCanvasGroup.alpha = 1;
-        interactionButtonCanvasGroup.interactable = true;
-        interactionButtonCanvasGroup.blocksRaycasts = true;
+        interactionButtonCanvasGroup.interactable = true; // Re-enable interaction
+        interactionButtonCanvasGroup.blocksRaycasts = true; // Enable raycasting
+
+        // Reset the interaction button in case any other issues are causing the problem
+        ResetButtonInteractionState();
     }
 
     void HandleButtonClick()
     {
+        Debug.Log("I am Clickable!");
         if (!isOpen)
         {
+            isClosed = false;
             isOpen = true;
+            giftBoxAnimator.SetBool("close", false);
             giftBoxAnimator.SetBool("open", true);
+
             StartCoroutine(OpenSequence());
         }
         else if (!isClosed)
         {
             isClosed = true;
-            uiObject.SetActive(false);
             StartCoroutine(CloseSequence());
         }
     }
@@ -84,15 +88,31 @@ public class GiftBoxAnimationController : MonoBehaviour
 
     IEnumerator CloseSequence()
     {
-        yield return new WaitForSeconds(delay);
-        giftBoxAnimator.SetBool("open", false);
+        uiObject.SetActive(false);
         giftBoxAnimator.SetBool("close", true);
+        giftBoxAnimator.SetBool("open", false);
+        isOpen = false;
+
+        // Immediately hide the interaction button when the close animation starts
+        interactionButtonCanvasGroup.alpha = 0;
+        interactionButtonCanvasGroup.interactable = false;
+        interactionButtonCanvasGroup.blocksRaycasts = false;
+
         yield return new WaitForSeconds(delay);
-        interactionButton.gameObject.SetActive(false);
+
+        // Wait for the loop animation to start again
+        yield return new WaitUntil(
+            () => giftBoxAnimator.GetCurrentAnimatorStateInfo(0).IsName("Loop")
+        );
+
+        // Fade in the interaction button and make it interactable
+        StartCoroutine(FadeInInteractionButton());
     }
 
-    void RestartScene()
+    void ResetButtonInteractionState()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // This function ensures the button state is refreshed and doesn't get stuck in a non-interactive state.
+        interactionButtonCanvasGroup.interactable = true;
+        interactionButtonCanvasGroup.blocksRaycasts = true;
     }
 }

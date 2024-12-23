@@ -295,25 +295,7 @@ MonoBehaviour:
   interactionButton: {fileID: 925675215}
   interactionButtonCanvasGroup: {fileID: 925675217}
   interactionButtonText: {fileID: 66370237}
-  delay: 1
---- !u!1 &490379004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 490379004, guid: 1aabc79992b0b3942b02461afec7121e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2430782286569104571}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &490379009
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490379004}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  delay: 0.5
 --- !u!95 &628652139 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2482826850807346175, guid: 5214b421c27271c40827c373a684a34f,
@@ -759,6 +741,10 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1622375503, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
+      propertyPath: _maxRewardsCount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1872401381, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.79003906
@@ -882,6 +868,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 961739752}
+    - target: {fileID: 2430782285482817407, guid: 1aabc79992b0b3942b02461afec7121e,
+        type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 566
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aabc79992b0b3942b02461afec7121e, type: 3}
 --- !u!1001 &2482826851397143444
