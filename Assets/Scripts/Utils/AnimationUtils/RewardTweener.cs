@@ -104,19 +104,16 @@ public class RewardTweener : MonoBehaviour
         PrepareRewards(_maxRewardsCount);
     }
 
-    private void FixedUpdate()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (_maxRewardsCount > _rewardsqueue.Count)
         {
-            if (_maxRewardsCount > _rewardsqueue.Count)
-            {
-                int _remainingCount = _maxRewardsCount - _rewardsqueue.Count;
-                PrepareRewards(_remainingCount);
-                StartCoroutine(AnimateRewards());
-            }
-
+            int _remainingCount = _maxRewardsCount - _rewardsqueue.Count;
+            PrepareRewards(_remainingCount);
             StartCoroutine(AnimateRewards());
         }
+
+        StartCoroutine(AnimateRewards());
     }
 
     void PrepareRewards(int _maxCount)
@@ -201,13 +198,14 @@ public class RewardTweener : MonoBehaviour
                                             .OnComplete(() => { });
                                     });
                                 _reward.SetActive(false);
-                                _rewardAudio.PlayOneShot(_rewardAudioClips[1]);
+                                _rewardAudio.PlayOneShot(_rewardAudioClips[0]);
 
                                 _rewardsqueue.Enqueue(_reward);
                             });
                     });
             }
             yield return wait;
+            this.enabled = false;
         }
     }
 }
